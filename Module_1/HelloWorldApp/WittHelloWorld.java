@@ -16,6 +16,12 @@ public class WittHelloWorld {
 
   /*
    * Builds hello world String from class constants.
+   * 
+   * @param firstName String
+   * 
+   * @param lastName String
+   * 
+   * @return returns hello world string with first and last name.
    */
   private static String helloWorldStringBuilder(String firstName, String lastName) {
     return "Hello World from " + firstName + " " + lastName + ".";
