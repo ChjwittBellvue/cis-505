@@ -21,7 +21,7 @@ public class Shoe extends Product {
         return size;
     } // end getSize
 
-    public void setColor(double size) {
+    public void setSize(double size) {
         this.size = size;
     } // end setSize
 
@@ -34,7 +34,7 @@ public class Shoe extends Product {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("  Shoe Size: " + size + System.lineSeparator());
+        sb.append("  Size: " + size + System.lineSeparator());
         return sb.toString();
     } // end toString
 }

@@ -1,3 +1,8 @@
+/*
+ *  REFERENCES
+ * 
+ *  Witt, C. (2024). CIS 505 Intermediate Java Programming. Bellevue University, all rights reserved.
+ */
 package Module_4.BowlingShopApp;
 
 public class Ball extends Product {
@@ -29,7 +34,7 @@ public class Ball extends Product {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("  Ball Color: " + color + System.lineSeparator());
+        sb.append("  Color: " + color + System.lineSeparator());
         return sb.toString();
     } // end toString
 }

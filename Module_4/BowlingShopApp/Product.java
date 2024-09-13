@@ -7,28 +7,28 @@ package Module_4.BowlingShopApp;
 
 public class Product {
     // Attributes
-    private String productCode;
+    private String code;
     private String description;
     private double price;
 
     // Constructors
     /**
-     * Sets default user, unassociated with an id in CustomerDB.
+     * Sets default product
      */
     public Product() {
-        this.productCode = "";
+        this.code = "";
         this.description = "";
         this.price = 0;
     } // end default constructor
 
     // Accessors and Mutators
-    public String getProductCode() {
-        return productCode;
-    } // end getProductCode
+    public String getCode() {
+        return code;
+    } // end getCode
 
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
-    } // end setProductCode
+    public void setCode(String code) {
+        this.code = code;
+    } // end setCode
 
     public String getDescription() {
         return description;
@@ -53,9 +53,10 @@ public class Product {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("  Product Code: " + productCode + System.lineSeparator());
+        sb.append("  Product Code: " + code + System.lineSeparator());
         sb.append("  Description: " + description + System.lineSeparator());
-        sb.append("  Price: $" + price + System.lineSeparator());
+        String formattedPrice = String.format("$%,6.2f", price);
+        sb.append("  Price: " + formattedPrice + System.lineSeparator());
         return sb.toString();
     } // end toString
 
