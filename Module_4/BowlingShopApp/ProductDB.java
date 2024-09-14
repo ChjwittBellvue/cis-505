@@ -1,6 +1,8 @@
 /*
  *  REFERENCES
  * 
+ * Singh, D. (2023, March 18). Generics in Java. Retrieved September 14, 2024, from https://www.geeksforgeeks.org/generics-in-java/
+ * 
  *  Witt, C. (2024). CIS 505 Intermediate Java Programming. Bellevue University, all rights reserved.
  */
 package Module_4.BowlingShopApp;
@@ -15,8 +17,7 @@ public class ProductDB {
      * @return GenericQueue<Product>
      */
     public static GenericQueue<Product> getProducts(String code) {
-        // If the user chooses "b"
-        if (code.equals("b")) {
+        if (code.equals("b")) { // If the user chooses "b"
             GenericQueue<Product> balls = new GenericQueue<Product>();
             // Create Ball objects
             Ball ball1 = createBall("BL1", "The Pin Decimator", 120.99, "Blue");
@@ -35,8 +36,7 @@ public class ProductDB {
             // Return the queue
             return balls;
 
-            // If the user chooses "s"
-        } else if (code.equals("s")) {
+        } else if (code.equals("s")) { // If the user chooses "s"
             GenericQueue<Product> shoes = new GenericQueue<Product>();
 
             Shoe shoe1 = createShoe("S1", "Dancin' Shoes", 60.99, 7);
@@ -53,8 +53,7 @@ public class ProductDB {
 
             return shoes;
 
-            // If the user chooses" a"
-        } else if (code.equals("a")) {
+        } else if (code.equals("a")) { // If the user chooses" a"
             GenericQueue<Product> bags = new GenericQueue<Product>();
 
             Bag bag1 = createBag("BA1", "Small ball bag", 50.00, "Single Ball");
@@ -66,11 +65,21 @@ public class ProductDB {
             bags.enqueue(bag3);
 
             return bags;
-        } else {
+
+        } else { // If the user chooses anything else
             return new GenericQueue<Product>();
         }
     }
 
+    /**
+     * Creates a ball object
+     * 
+     * @param productCode
+     * @param description
+     * @param price
+     * @param color
+     * @return Ball
+     */
     private static Ball createBall(String productCode, String description, double price, String color) {
         Ball ball = new Ball();
         ball.setCode(productCode);
@@ -81,6 +90,15 @@ public class ProductDB {
         return ball;
     }
 
+    /**
+     * Creates a Shoe object
+     * 
+     * @param productCode
+     * @param description
+     * @param price
+     * @param size
+     * @return Shoe
+     */
     private static Shoe createShoe(String productCode, String description, double price, int size) {
         Shoe shoe = new Shoe();
         shoe.setCode(productCode);
@@ -91,6 +109,15 @@ public class ProductDB {
         return shoe;
     }
 
+    /**
+     * Creates a Bag object
+     * 
+     * @param productCode
+     * @param description
+     * @param price
+     * @param type
+     * @return Bag
+     */
     private static Bag createBag(String productCode, String description, double price, String type) {
         Bag bag = new Bag();
         bag.setCode(productCode);
