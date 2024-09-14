@@ -26,6 +26,7 @@ public class GenericQueue<E> {
      * Removes an item from the queue
      */
     public void dequeue() {
+        System.out.println(list.getFirst().toString());
         list.removeFirst();
     } // end dequeue
 

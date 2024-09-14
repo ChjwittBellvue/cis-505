@@ -34,7 +34,7 @@ public class Bag extends Product {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("  Bag Type: " + type + System.lineSeparator());
+        sb.append("  Type: " + type + System.lineSeparator());
         return sb.toString();
     } // end toString
 }
