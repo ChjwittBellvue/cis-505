@@ -13,6 +13,9 @@ public class Composer {
 
     // Constructors
     public Composer() {
+        this.id = 0;
+        this.name = "";
+        this.genre = "";
     } // end default constructor
 
     public Composer(Integer id, String name, String genre) {
