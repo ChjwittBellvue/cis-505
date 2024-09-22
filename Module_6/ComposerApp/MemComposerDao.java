@@ -49,7 +49,7 @@ public class MemComposerDao implements ComposerDao {
             }
         }
         // If no composer is found, return a null object
-        System.out.println("No composer found with that ID.");
+        System.out.println("  No composer found with that ID." + System.lineSeparator());
         return null;
     } // end findBy
 
