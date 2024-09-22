@@ -55,7 +55,7 @@ public class ValidatorIO {
                 input = sc.nextDouble();
                 isValid = true;
             } else {
-                System.out.println("\n  Error! Invalid double value.\n");
+                System.out.println("\n  Error! Invalid double value.");
             }
             sc.nextLine();
         }
@@ -71,7 +71,7 @@ public class ValidatorIO {
      */
     public static String getString(Scanner sc, String prompt) {
         System.out.print(prompt);
-        String input = sc.next();
+        String input = sc.nextLine();
         return input;
     } // end getString
 

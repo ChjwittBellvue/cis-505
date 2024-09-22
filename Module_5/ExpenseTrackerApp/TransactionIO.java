@@ -69,7 +69,7 @@ public class TransactionIO {
 
             input.close();
         } else { // If there is no file, inform the user that there are no transactions
-            System.out.println("  No transactions found");
+            System.out.println("  No transactions found \n");
         }
 
         // Return the list of Transactions
