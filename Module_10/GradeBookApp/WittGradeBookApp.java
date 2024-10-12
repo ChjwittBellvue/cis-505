@@ -32,7 +32,6 @@ public class WittGradeBookApp extends Application {
     private Label lblLastName = new Label("Last Name:");
     private Label lblCourse = new Label("Course:");
     private Label lblGrade = new Label("Grade:");
-    private Label lblFutureValueDate = new Label("");
 
     // Value list for combo box
     private ObservableList<String> options = FXCollections.observableArrayList("A", "B", "C", "D", "F");
@@ -94,10 +93,6 @@ public class WittGradeBookApp extends Application {
         gridPane.add(cbGrade, 1, 3);
         GridPane.setHalignment(cbGrade, HPos.LEFT);
 
-        // Set button commands
-        btnClear.setOnAction(e -> clearFormFields());
-        // btnCalculate.setOnAction(e -> calculateResults());
-
         // Set up button container and add it to the gridPane
         HBox actionBtnContainer = new HBox();
         actionBtnContainer.setPadding(new Insets(15, 0, 15, 30));
@@ -106,9 +101,6 @@ public class WittGradeBookApp extends Application {
         actionBtnContainer.getChildren().add(btnViewGrades);
         actionBtnContainer.getChildren().add(btnSaveGrade);
         gridPane.add(actionBtnContainer, 1, 4);
-
-        // Add future date label to grid
-        gridPane.add(lblFutureValueDate, 0, 5, 2, 1);
 
         // Add second container for the text area
         HBox txtBox = new HBox();
@@ -128,16 +120,4 @@ public class WittGradeBookApp extends Application {
         primaryStage.show();
     } // end start
 
-    /**
-     * Clears user input from UI
-     */
-    private void clearFormFields() {
-        txtFirstName.setText("");
-        txtLastName.setText("");
-        txtResults.setText("");
-        txtCourse.setText("");
-        lblFutureValueDate.setText("");
-        cbGrade.setValue(null);
-
-    }
 }
