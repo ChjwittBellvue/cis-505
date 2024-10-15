@@ -104,6 +104,8 @@ public class WittEnhancedFutureValueApp extends Application {
 
         // Add Combo Box
         cbYears.setMinWidth(200);
+        // Set Default to 0
+        cbYears.setValue(0);
         gridPane.add(cbYears, 1, 3);
         GridPane.setHalignment(cbYears, HPos.LEFT);
 
