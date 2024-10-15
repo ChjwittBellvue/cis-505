@@ -96,11 +96,11 @@ public class WittEnhancedFutureValueApp extends Application {
         GridPane.setHalignment(lblYears, HPos.LEFT);
 
         // Add Text Boxes
-        gridPane.add(txtInterestRate, 1, 1);
-        GridPane.setHalignment(txtInterestRate, HPos.RIGHT);
-
         gridPane.add(txtMonthlyPayment, 1, 0);
         GridPane.setHalignment(txtMonthlyPayment, HPos.RIGHT);
+
+        gridPane.add(txtInterestRate, 1, 1);
+        GridPane.setHalignment(txtInterestRate, HPos.RIGHT);
 
         // Add Combo Box
         cbYears.setMinWidth(200);
