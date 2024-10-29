@@ -1,3 +1,17 @@
+/*
+ *  REFERENCES
+ * 
+ * Liang, Y.D. (2019). Introduction to Java Programming and Data Structures:
+ * Comprehensive Version (12th ed.). Pearson Education, Inc.
+ * 
+ * Oracle (2013, September 1). Using JavaFX UI Controls - Combo Box. Retrieved September 29, 2024, from https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
+ * 
+ * Payne, D. (2021). CSD 405 Intermediate Java Programming. Bellevue University.
+ * Modified by Witt, C. 2024
+ * 
+ *  Witt, C. (2024). CIS 505 Intermediate Java Programming. Bellevue University, all rights reserved.
+ */
+
 package Module_10.GradeBookApp;
 
 import javafx.application.Application;
@@ -79,10 +93,10 @@ public class WittGradeBookApp extends Application {
         GridPane.setHalignment(lblGrade, HPos.LEFT);
 
         // Add Text Boxes
-        gridPane.add(txtFirstName, 1, 1);
+        gridPane.add(txtFirstName, 1, 0);
         GridPane.setHalignment(txtFirstName, HPos.RIGHT);
 
-        gridPane.add(txtLastName, 1, 0);
+        gridPane.add(txtLastName, 1, 1);
         GridPane.setHalignment(txtLastName, HPos.RIGHT);
 
         gridPane.add(txtCourse, 1, 2);
