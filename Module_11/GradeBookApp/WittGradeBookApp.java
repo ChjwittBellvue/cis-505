@@ -116,14 +116,14 @@ public class WittGradeBookApp extends Application {
             try {
                 viewGrades();
             } catch (IOException e1) {
-                txtResults.setText("Error occurred while reading grades file, unable to complete operation.");
+                txtResults.setText("  Error occurred while reading grades file, unable to complete operation.");
             }
         });
         btnSaveGrade.setOnAction(e -> {
             try {
                 saveGrade();
             } catch (IOException e1) {
-                txtResults.setText("Error occurred while writing to grades file, unable to complete operation.");
+                txtResults.setText("  Error occurred while writing to grades file, unable to complete operation.");
             }
         });
 
@@ -274,7 +274,7 @@ public class WittGradeBookApp extends Application {
     private void appendErrorsToTxtResults(String message, boolean firstMessage) {
         // If this is the first error, reset the results area and indicate an error
         if (firstMessage) {
-            txtResults.setText(" ERROR: " + System.lineSeparator());
+            txtResults.setText("  ERROR: " + System.lineSeparator());
             txtResults.appendText(message + System.lineSeparator());
         } else { // If this is not the first error, append the new error to the list
             txtResults.appendText(message + System.lineSeparator());
