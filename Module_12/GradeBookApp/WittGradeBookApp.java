@@ -90,7 +90,7 @@ public class WittGradeBookApp extends Application {
         GridPane.setHalignment(lblLastName, HPos.LEFT);
 
         gridPane.add(lblCourse, 0, 2);
-        GridPane.setHalignment(lblCourse, HPos.RIGHT);
+        GridPane.setHalignment(lblCourse, HPos.LEFT);
 
         gridPane.add(lblGrade, 0, 3);
         GridPane.setHalignment(lblGrade, HPos.LEFT);
@@ -175,11 +175,11 @@ public class WittGradeBookApp extends Application {
         // Call IO class to get students
         ArrayList<Student> students = StudentIO.findAll();
 
+        // Clear the results box
+        txtResults.clear();
+
         // If there are valid students in the file
         if (!students.isEmpty()) {
-            // Line to indicate everything that follows are grade objects
-            txtResults.setText("  Grades: " + System.lineSeparator() + System.lineSeparator());
-
             // Cycle through the students and append the results
             for (Student student : students) {
                 txtResults.appendText(student.toString() + System.lineSeparator());
@@ -244,6 +244,7 @@ public class WittGradeBookApp extends Application {
 
         // Validate there are no commas in the
         fieldsValid = verifyNoCommas(fieldsValid);
+        fieldsValid = verifyNoNumbersOrSpecialCharacters(fieldsValid);
 
         return fieldsValid;
     }
@@ -259,6 +260,22 @@ public class WittGradeBookApp extends Application {
         if (txtFirstName.getText().contains(",") || txtLastName.getText().contains(",")
                 || txtCourse.getText().contains(",")) {
             appendErrorsToTxtResults("   Commas are not allowed in text fields.", fieldsValid);
+            return false;
+        }
+        return fieldsValid;
+    }
+
+    /**
+     * Checks for numbers and special characters in fields
+     * NOTE: Regex for special characters or numbers: [^a-zA-Z]+
+     * 
+     * @param fieldsValid
+     * @return boolean - valid fields
+     */
+    private boolean verifyNoNumbersOrSpecialCharacters(boolean fieldsValid) {
+        // Checks for commas in each text field
+        if (txtFirstName.getText().matches("[^a-zA-Z]+") || txtLastName.getText().matches("[^a-zA-Z]+")) {
+            appendErrorsToTxtResults("   Numbers and special characters are not allowed in text fields.", fieldsValid);
             return false;
         }
         return fieldsValid;
