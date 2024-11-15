@@ -243,25 +243,8 @@ public class WittGradeBookApp extends Application {
         }
 
         // Validate there are no commas in the
-        fieldsValid = verifyNoCommas(fieldsValid);
         fieldsValid = verifyNoNumbersOrSpecialCharacters(fieldsValid);
 
-        return fieldsValid;
-    }
-
-    /**
-     * Checks for commas in fields, if they are included they will break the csv
-     * 
-     * @param fieldsValid
-     * @return boolean - valid fields
-     */
-    private boolean verifyNoCommas(boolean fieldsValid) {
-        // Checks for commas in each text field
-        if (txtFirstName.getText().contains(",") || txtLastName.getText().contains(",")
-                || txtCourse.getText().contains(",")) {
-            appendErrorsToTxtResults("   Commas are not allowed in text fields.", fieldsValid);
-            return false;
-        }
         return fieldsValid;
     }
 

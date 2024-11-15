@@ -67,7 +67,6 @@ public class StudentIO {
 
                 // Assign sets of 4 input to their proper Student values
                 String studentCsvString = input.next();
-                System.out.println(studentCsvString);
                 String[] studentArgs = studentCsvString.split(",");
 
                 // Add the student to the list
