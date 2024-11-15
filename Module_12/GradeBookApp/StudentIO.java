@@ -4,6 +4,10 @@
  * Pankaj (2022, October 24). Java SimpleDateFormat - Java Date Format. Retrieved September 14, 2024, 
  * from https://www.digitalocean.com/community/tutorials/java-simpledateformat-java-date-format
  * 
+ * (2020, October 26). Next() does't allow "white space" and nextLine() skips "sodaType" all together. StackOverflow. 
+ * Retrieved November 15, 2024, from 
+ * https://stackoverflow.com/questions/64543656/next-doest-allow-white-space-and-nextline-skips-sodatype-all-together
+ * 
  *  Witt, C. (2024). CIS 505 Intermediate Java Programming. Bellevue University, all rights reserved.
  */
 package Module_12.GradeBookApp;
@@ -53,6 +57,7 @@ public class StudentIO {
 
         if (file.exists()) {
             Scanner input = new Scanner(file);
+            input.useDelimiter("\r?\n");
 
             // Skip header
             input.next();
@@ -62,6 +67,7 @@ public class StudentIO {
 
                 // Assign sets of 4 input to their proper Student values
                 String studentCsvString = input.next();
+                System.out.println(studentCsvString);
                 String[] studentArgs = studentCsvString.split(",");
 
                 // Add the student to the list
