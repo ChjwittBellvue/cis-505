@@ -9,6 +9,9 @@
  * Payne, D. (2021). CSD 405 Intermediate Java Programming. Bellevue University.
  * Modified by Witt, C. 2024
  * 
+ * (2011, November 23). Check if a String contains a special character. StackOverflow. Retrieved November 16, 2024, 
+ * from https://stackoverflow.com/questions/1795402/check-if-a-string-contains-a-special-character
+ * 
  *  Witt, C. (2024). CIS 505 Intermediate Java Programming. Bellevue University, all rights reserved.
  */
 
@@ -16,6 +19,7 @@ package Module_12.GradeBookApp;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -256,10 +260,20 @@ public class WittGradeBookApp extends Application {
      * @return boolean - valid fields
      */
     private boolean verifyNoNumbersOrSpecialCharacters(boolean fieldsValid) {
-        // Checks for commas in each text field
-        if (txtFirstName.getText().matches("[^a-zA-Z]+") || txtLastName.getText().matches("[^a-zA-Z]+")) {
-            appendErrorsToTxtResults("   Numbers and special characters are not allowed in text fields.", fieldsValid);
-            return false;
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern special = Pattern.compile("[!,@#$%&*()_+=|<>?{}\\[\\]~-]");
+
+        // Checks for numbers and special characters in the name textboxes
+        if (digit.matcher(txtFirstName.getText()).find() || special.matcher(txtFirstName.getText()).find() ||
+                digit.matcher(txtLastName.getText()).find() || special.matcher(txtLastName.getText()).find()) {
+            appendErrorsToTxtResults("   Numbers and special characters are not allowed in first/last name.",
+                    fieldsValid);
+            fieldsValid = false;
+        }
+
+        if (txtCourse.getText().contains(",")) {
+            appendErrorsToTxtResults("   Commas are not allowed in the course.", fieldsValid);
+            fieldsValid = false;
         }
         return fieldsValid;
     }
